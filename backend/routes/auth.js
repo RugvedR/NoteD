@@ -4,18 +4,17 @@ const router = express.Router();
 const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const { ResultWithContext } = require('express-validator/src/chain');
+const fetchuser = require('../middleware/fetchuser');
 
 
 const JWT_SECRET = 'somethingisaver$ygoodbo#y';
 
 
 // ROUTE 1: Create a user using: POST "/api/auth/createuser". No login required
-
 router.post('/createuser',[
     body('name').isLength({min: 3}),
     body('email', 'Enter a valid email').isEmail(),
-    body('password').isLength({min: 5}),
+    body('password', 'Password must be of length 5 characters').isLength({min: 5}),
 
 ], async (req, res)=>{
 
@@ -100,10 +99,11 @@ router.post('/login',[
 })
 
 // ROUTE 3: Get logged-in user details using: POST "/api/auth/getuser". Login required
-router.post('/getuser', async (req, res)=>{
+router.post('/getuser', fetchuser, async (req, res)=>{
     try {
-        let userId = "TODO";
+        let userId = req.user.id;
         const user = await User.findById(userId).select("-password")
+        res.send(user)
         
     } catch(error){
         console.error(error.message);
