@@ -34,8 +34,9 @@ const Signup = (props) => {
   }
   return (
     <div className='container' >
+      <h2>Create a NoteD account</h2>
       <form onSubmit={handleSubmit}>
-        <div className="mb-3">
+        <div className="my-3">
           <label htmlFor="email" className="form-label">Name</label>
           <input type="text" className="form-control" value={credentials.name} onChange={onChange} id="name" name='name' aria-describedby="emailHelp"/>
         </div>
