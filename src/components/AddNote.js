@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import noteContext from "../context/notes/noteContext";
 import './styles/AddNote.css'
 
+import { ReactComponent as AddNoteSVG } from '../sticky-note.svg';
+
 
 const AddNote = (props) => {
     
@@ -24,7 +26,9 @@ const AddNote = (props) => {
   return (
     <div>
       <div className="container my-3 my-add-note">
-
+        <div className="add-note-side">
+          <AddNoteSVG className="add-note-svg" />
+        </div>
         <div className="add-note-card">
 
           <h2>Add a Note</h2>
@@ -49,7 +53,17 @@ const AddNote = (props) => {
               <label htmlFor="description" className="form-label">
                 Description
               </label>
-              <input
+              <textarea 
+                  className="form-control rounded-2" 
+                  rows="5"
+                  id="description"
+                  name="description"
+                  value={note.description}
+                  onChange={onChange}
+                  minLength={5}
+                  required
+                  ></textarea>
+              {/* <input
                 type="text"
                 className="form-control"
                 id="description"
@@ -58,7 +72,7 @@ const AddNote = (props) => {
                 onChange={onChange}
                 minLength={5}
                 required
-              />
+              /> */}
             </div>
             <div className="mb-3">
               <label htmlFor="tag" className="form-label">
@@ -83,7 +97,7 @@ const AddNote = (props) => {
                 Check me out
               </label>
             </div> */}
-            <button disabled={note.title.length<5 || note.description.length<5} type="submit" className="btn btn-primary" onClick={handleClick} >
+            <button disabled={note.title.length<5 || note.description.length<5} type="submit" className="add-note-button" onClick={handleClick} >
               Add note
             </button>
           </form>

@@ -11,7 +11,68 @@
 }
 
 
+
 .my-add-note{
   font-family: 'Ubuntu', sans-serif;
-    
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.add-note-side{
+  padding: 20px;
+  padding-top: 40px;
+  /* background-color: blue; */
+  /* height: 0; */
+  width: 400px;
+}
+
+.add-note-card{
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+
+ 
+/* CSS */
+.add-note-button{
+  background: var(--theme-true-blue);
+  border: 1px solid var(--theme-true-blue);
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  /* font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif; */
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 15px;
+  font-weight:400;
+  line-height: 14px;
+  /* min-height: 40px; */
+  outline: 0;
+  padding: 10px 12px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  /* margin-left: 10px; */
+  margin-right: 2px;
+}
+
+.add-note-button:hover,
+.add-note-button:active {
+  background-color: initial;
+  border: 1px solid var(--theme-true-blue);
+  background-position: 0 0;
+  color: var(--theme-true-blue);
+}
+
+.add-note-button:active {
+  opacity: .5;
 }
