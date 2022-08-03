@@ -5,6 +5,9 @@ import noteContext from "../context/notes/noteContext";
 import Noteitem from "./Noteitem";
 import { useNavigate } from "react-router-dom";
 
+import './styles/Notes.css'
+
+
 const Notes = (props) => {
   const context = useContext(noteContext);
   const { notes, getNotes, editNote } = context;
@@ -57,7 +60,7 @@ const Notes = (props) => {
       </button>
 
       <div
-        className="modal fade"
+        className="modal fade mymodal"
         id="exampleModal"
         tabIndex="-1"
         role="dialog"
@@ -98,22 +101,26 @@ const Notes = (props) => {
                     minLength={5}
                     required
                   />
+                  
                 </div>
                 <div className="mb-3">
                   <label htmlFor="description" className="form-label">
                     Description
                   </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="edescription"
-                    name="edescription"
-                    value={note.edescription}
-                    onChange={onChange}
-                    minLength={5}
-                    required
+                  <textarea 
+                  className="form-control rounded-2" 
+                  rows="5"
+                  id="edescription"
+                  name="edescription"
+                  value={note.edescription}
+                  onChange={onChange}
+                  minLength={5}
+                  required
+                  ></textarea>
 
-                  />
+                  {/* <input
+                    type="text"
+                  /> */}
                 </div>
                 <div className="mb-3">
                   <label htmlFor="tag" className="form-label">
@@ -132,15 +139,15 @@ const Notes = (props) => {
             </div>
             <div className="modal-footer">
               <button
+                className='closebtn'
                 ref={refClose}
                 type="button"
                 data-bs-dismiss="modal"
-                className="btn btn-secondary"
                 data-dismiss="modal"
               >
                 Close
               </button>
-              <button disabled={note.etitle.length<5 || note.edescription.length<5} onClick={handleClick} type="button" className="btn btn-primary">
+              <button disabled={note.etitle.length<5 || note.edescription.length<5} onClick={handleClick} type="button" className="update-btn">
                 Update Note
               </button>
             </div>
@@ -148,17 +155,20 @@ const Notes = (props) => {
         </div>
       </div>
 
-      <div className="row my-3">
-        <h2>Your Notes</h2>
-        <div className="container">
-          {notes.length===0 && 'No notes to display'}
+      <div className="container">
 
-        </div>
+      <div className="row my-3 my-your-notes">
+        <h2  >Your Notes</h2>
+          <div >
+          {notes.length===0 && 'No notes to display'}
+          </div>
+
         {notes.map((note) => {
           return (
             <Noteitem key={note._id} showAlert={props.showAlert} updateNote={updateNote} note={note} />
           );
         })}
+      </div>
       </div>
     </>
   );

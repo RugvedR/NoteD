@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+:root{
+    --theme-little-dark: #3C3744;
+    --theme-light-grey: #ffffffad;
+    --theme-true-blue: #3066BE;
+    --theme-duke-blue: #090C9B;
+    --theme-light-steel: #B4C5E4;
+    --theme-ivory: #FBFFF1;
+}
+
+.mymodal{
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+.my-your-notes{
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+/* CSS */
+.closebtn {
+    background: var(--theme-little-dark);
+    border: 1px solid var(--theme-little-dark);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    /* font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    font-weight:400;
+    line-height: 14px;
+    /* min-height: 40px; */
+    outline: 0;
+    padding: 10px 12px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-right: 2px;
+  }
+  
+  .closebtn:hover,
+  .closebtn:active {
+    background-color: initial;
+    border: 1px solid var(--theme-little-dark);
+    background-position: 0 0;
+    color: var(--theme-little-dark);
+  }
+  
+  .closebtn:active {
+    opacity: .5;
+  }
+
+
+  
+/* CSS */
+.update-btn {
+    background: var(--theme-true-blue);
+    border: 1px solid var(--theme-true-blue);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    /* font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    font-weight:400;
+    line-height: 14px;
+    /* min-height: 40px; */
+    outline: 0;
+    padding: 10px 12px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-right: 2px;
+  }
+  
+  .update-btn:hover,
+  .update-btn:active {
+    background-color: initial;
+    border: 1px solid var(--theme-true-blue);
+    background-position: 0 0;
+    color: var(--theme-true-blue);
+  }
+  
+  .update-btn:active {
+    opacity: .5;
+  }

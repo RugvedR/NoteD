@@ -71,13 +71,13 @@
 
 
 .login-card{
-    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     font-family: 'Ubuntu', sans-serif;
-    border-left: 2px solid var(--theme-true-blue);
+    /* border-left: 2px solid var(--theme-true-blue); */
     padding: 20px;
-    /* border-radius: 8px; */
-    width: 450px;
-    padding-left: 40px;
+    border-radius: 8px;
+    width: 400px;
+    /* padding-left: 40px; */
 }
 
 .signupLink{
@@ -131,3 +131,30 @@
   .button-25:active {
     opacity: .5;
   }
+
+
+
+  
+.navbr{
+  border-radius: 10px;
+  /* position: fixed; */
+  /* z-index: 2; */
+  /* top: 10px; */
+  height: 60px;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  background-color: var(--theme-true-blue);
+  padding: 10px;
+
+  /* width:min-content;    */
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  /* transition-property: background-color; */
+  /* transition: 0.4s ease-in-out; */
+}
+
+.activeItem1{
+  color: white;
+  border-bottom: 3px solid white;
+  transition: 0.4s ease;
+}

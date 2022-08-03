@@ -48,7 +48,7 @@ const Login = (props) => {
 
 <nav>
       <div className="cont">
-        <div className="navb">
+        <div className="navbr">
           <div className="logo">
             <img src={Logo} alt="logo" />
           </div>
@@ -56,8 +56,6 @@ const Login = (props) => {
         </div>
       </div>
     </nav>
-
-
 
       <div className="cont0">
         <div className="cont1">
