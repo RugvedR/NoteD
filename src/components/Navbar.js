@@ -1,7 +1,23 @@
 import React from 'react'
 import {Link, useLocation, useNavigate} from  "react-router-dom";
+import './styles/Navbar.css'
+import Logo from '../mainlogo3.png'
 
 const Navbar = () => {
+
+    document.onreadystatechange = function(){
+      let lastScrollPosition = 0;
+      const navbar = document.querySelector('.navb');
+      window.addEventListener('scroll', function(e) {
+        lastScrollPosition = window.scrollY;
+        
+        if (lastScrollPosition > 10)
+          navbar.classList.add('navbar-scrolled');
+        else
+          navbar.classList.remove('navbar-scrolled');
+      });
+    }
+  
 
   let location = useLocation();
   let navigate = useNavigate();
@@ -12,7 +28,32 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <>
+    
+    <nav>
+      <div className="cont">
+        <div className="navb">
+          <div className="logo">
+            <img src={Logo} alt="logo" />
+          </div>
+
+          <div className="mainMenu">
+            <div className="menu">
+              <ul>
+                <li  ><Link className={`${location.pathname==="/"? "activeItem" : ""}`} to="/">Home</Link></li>
+                <li  ><Link className={`${location.pathname==="/about"? "activeItem" : ""}`} to="/about">About</Link></li>
+              </ul>
+            </div>
+            <div className="login-signup-area">
+            <button className="button-25" onClick={handleLogout} >Logout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    {/* <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
             <Link className="navbar-brand" to="/">NoteD</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +76,8 @@ const Navbar = () => {
             </form>: <button className="btn btn-primary" onClick={handleLogout} >Logout</button>}
             </div>  
         </div>
-    </nav>
+    </nav> */}
+    </>
   )
 }
 

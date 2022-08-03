@@ -1,7 +1,7 @@
 
-            Fonts used: Lato-Bold,Bellfort 
+            Fonts used: LeagueGothic-Italic 
 
-            Colors used: 495FA6,F6AE84  
+            Colors used: F2EEE4,5065A8  
 
             Icon url: https://thenounproject.com/term/notes/172050  
         

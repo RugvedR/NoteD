@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import './styles/Signup.css'
+import signupLogo from '../mainlogo1.png'
+
 
 const Signup = (props) => {
   const [credentials, setCredentials] = useState({name: "", email:"", password:"", cpassword: ""});
@@ -33,8 +36,21 @@ const Signup = (props) => {
     setCredentials({...credentials, [e.target.name]: e.target.value});
   }
   return (
-    <div className='container' >
-      <h2>Create a NoteD account</h2>
+    <div className='cont-signup' >
+      <div className="cont1-signup">
+          <img className='signup-logo' src={signupLogo} alt="" />
+          <div className="text-signup">
+            <h1>Create an Account </h1>
+            <h1>And Get Started with <span className='logotext' >Noted.</span></h1>
+          </div>
+          <div className="mt-3">
+            Already have an account?<span><Link className='signupLink' to='/login' >Log in</Link> </span>
+          </div>
+      </div>
+
+      <div className="signup-card">
+      
+      <h2>Create a Noted account</h2>
       <form onSubmit={handleSubmit}>
         <div className="my-3">
           <label htmlFor="email" className="form-label">Name</label>
@@ -54,8 +70,10 @@ const Signup = (props) => {
           <input type="password" className="form-control" value={credentials.cpassword} onChange={onChange} id="cpassword" name='cpassword' minLength={5} required  />
         </div>
         
-        <button type="submit" className="btn btn-primary"  >Submit</button>
+        <button type="submit" className="button-25"  >Create account</button>
       </form>
+
+      </div>
     </div>
   )
 }

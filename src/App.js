@@ -27,9 +27,8 @@ function App() {
     <>
       <NoteState>
         <Router>
-          <Navbar />
+          {/* <Navbar /> */}
           <Alert alert={alert} />
-          <div className="container">
             <Routes>
               <Route exact path="/" element={<Home showAlert={showAlert} />} />
               <Route exact path="/about" element={<About />} />
@@ -37,7 +36,6 @@ function App() {
               <Route exact path="/signup" element={<Signup showAlert={showAlert}/>} />
 
             </Routes>
-          </div>
         </Router>
       </NoteState>
     </>

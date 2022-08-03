@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+:root{
+    --theme-little-dark: #3C3744;
+    --theme-light-grey: #ffffffad;
+    --theme-true-blue: #3066BE;
+    --theme-duke-blue: #090C9B;
+    --theme-light-steel: #B4C5E4;
+    --theme-ivory: #FBFFF1;
+}
+
+.cont-signup{
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* margin-top: 30px; */
+  height: 90vh;
+  padding-top: 30px;
+  
+}
+
+.cont1-signup{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    height: 500px;
+    
+}
+
+.signup-logo{
+    /* height: 40px; */
+    width: 400px;
+}
+
+.signup-card{
+    width: 400px;
+    height: 500px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 24px;
+    /* margin-bottom: 30px; */
+    border-radius: 10px;
+}
+

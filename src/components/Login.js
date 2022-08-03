@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
+import './styles/Login.css'
+import { ReactComponent as LoginSVG } from '../authentication.svg';
+// import textLogo from '../Noted-written.png'
+import Logo from '../mainlogo3.png'
+
 
 const Login = (props) => {
 
@@ -33,23 +38,60 @@ const Login = (props) => {
   const onChange = (e)=>{
     setCredentials({...credentials, [e.target.name]: e.target.value});
   }
+
+  
+  let location = useLocation();
   
   return (
-    <div className='container' >
-      <h2>Login to continue</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="my-3">
-          <label htmlFor="email" className="form-label">Email address</label>
-          <input type="email" className="form-control" value={credentials.email} onChange={onChange} id="email" name='email' aria-describedby="emailHelp"/>
-          <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+    <div className='main-container ' >
+
+
+<nav>
+      <div className="cont">
+        <div className="navb">
+          <div className="logo">
+            <img src={Logo} alt="logo" />
+          </div>
+          
         </div>
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">Password</label>
-          <input type="password" className="form-control" value={credentials.password} onChange={onChange} id="password" name='password' />
+      </div>
+    </nav>
+
+
+
+      <div className="cont0">
+        <div className="cont1">
+          <div className="text-cont">
+            <h1>Welcome, </h1>
+            <h2>Please Log in to get things <span className='logotext' >Noted.</span></h2>
+          </div>
+          
+          <LoginSVG className='image' />
         </div>
-        
-        <button type="submit" className="btn btn-primary"  >Submit</button>
-      </form>
+        <div className="cont2">
+          <div className="login-card">
+            <h2>Login</h2>
+            <form onSubmit={handleSubmit}>
+              <div className="my-3">
+                <label htmlFor="email" className="form-label">Email address</label>
+                <input type="email" className="form-control" value={credentials.email} onChange={onChange} id="email" name='email' aria-describedby="emailHelp"/>
+                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="password" className="form-label">Password</label>
+                <input type="password" className="form-control" value={credentials.password} onChange={onChange} id="password" name='password' />
+              </div>
+              
+              <button type="submit" className="button-25"  >Log in</button>
+              <div className="mt-3">
+                Don't have an account?<span><Link className='signupLink' to='/signup' >Create account</Link> </span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      
     </div>
   )
 }
