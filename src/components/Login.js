@@ -45,7 +45,7 @@ const Login = (props) => {
   return (
     <div className='main-container ' >
 
-
+{/* 
 <nav>
       <div className="cont">
         <div className="navbr">
@@ -55,7 +55,7 @@ const Login = (props) => {
           
         </div>
       </div>
-    </nav>
+    </nav> */}
 
       <div className="cont0">
         <div className="cont1">

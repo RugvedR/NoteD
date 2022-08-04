@@ -1,0 +1,20 @@
+:root{
+    --theme-little-dark: #3C3744;
+    --theme-light-grey: #ffffffad;
+    --theme-true-blue: #3066BE;
+    --theme-duke-blue: #090C9B;
+    --theme-light-steel: #B4C5E4;
+    --theme-ivory: #FBFFF1;
+}
+
+.my-icon{
+    /* background-color: blue; */
+    padding: 6px;
+    border-radius: 50px;
+}
+
+.my-icon:hover{
+    background-color: rgb(177, 177, 177);
+    padding: 6px;
+    border-radius: 50px;
+}

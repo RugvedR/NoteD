@@ -40,12 +40,16 @@ const Navbar = () => {
           <div className="mainMenu">
             <div className="menu">
               <ul>
-                <li  ><Link className={`${location.pathname==="/"? "activeItem" : ""}`} to="/">Home</Link></li>
+                <li  ><Link className={`${location.pathname==="/"? "activeItem" : ""}`} to="/">Notes</Link></li>
                 <li  ><Link className={`${location.pathname==="/about"? "activeItem" : ""}`} to="/about">About</Link></li>
               </ul>
             </div>
             <div className="login-signup-area">
-            <button className="button-25" onClick={handleLogout} >Logout</button>
+            {!localStorage.getItem('token')? <form className="buttons" role="search">
+                <Link className="button-24" to="/login" role="button">Log in</Link>
+                <div className="divider"></div>
+                <Link className="button-25" to="/signup" role="button">Get Started Now</Link>
+            </form>: <button className="button-25" onClick={handleLogout} >Logout</button>}
             </div>
           </div>
         </div>
