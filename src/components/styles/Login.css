@@ -158,3 +158,11 @@
   border-bottom: 3px solid white;
   transition: 0.4s ease;
 }
+
+
+@media only screen and (max-width: 800px) {
+    
+  .cont0{
+    flex-direction: column;
+  }
+}
